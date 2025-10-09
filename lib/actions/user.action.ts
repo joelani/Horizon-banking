@@ -66,14 +66,14 @@ export const signUp = async (userData: SignUpParams) => {
       `${firstName} ${lastName}`
     );
 
-    console.log("Account created ✅", newUserAccount);
+    // console.log("Account created ✅", newUserAccount);
 
     // const session = await account.createEmailPasswordSession(email, password);
     const session = await account.createEmailPasswordSession({
       email,
       password,
     });
-    console.log("Session created ✅", session);
+    // console.log("Session created ✅", session);
 
     const cookieStore = await cookies();
     cookieStore.set("appwrite-session", session.secret, {
